@@ -1,0 +1,40 @@
+.icon-style{
+    padding:12px;
+    margin-left: 4px;
+}
+.head-style{
+    padding:10px;
+    font-size: 16px;
+    font-family:courier,arial,helvetica;
+    margin-top: 12px;
+}
+.peopleCarouselImg img {
+    width: auto;
+    height: 225px;
+    max-height: 225px;
+  }
+  h5 {
+    width: 100%; 
+    text-align: center; 
+    border-bottom: 1px solid #000; 
+    line-height: 0.1em;
+    margin: 10px 0 20px; 
+    font-family:courier,arial,helvetica;
+ } 
+ 
+ h5 span { 
+     background:#fff; 
+     padding:0 10px; 
+ }
+ .card-custom {
+    max-width: 128px;
+}
+.styledeal{
+    font-size: 20px;
+    margin-left: 50px;
+}
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}

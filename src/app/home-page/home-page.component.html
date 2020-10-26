@@ -17,47 +17,21 @@
     <!--Carousel Wrapper-->
 <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
     <!--Indicators-->
-    <ol class="carousel-indicators">
-      <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
-      <li data-target="#carousel-example-2" data-slide-to="1"></li>
-      <li data-target="#carousel-example-2" data-slide-to="2"></li>
-    </ol>
+    <!-- <ol class="carousel-indicators">
+      <li data-target="#carousel-example-2" *ngFor="let x of carouselData;let i = index" [attr.data-slide-to]="i" ngClass="i == 0 ? 'active' : ''"></li>
+    </ol> -->
     <!--/.Indicators-->
     <!--Slides-->
     <div class="carousel-inner" role="listbox">
-      <div class="carousel-item active peopleCarouselImg">
+      <div class="peopleCarouselImg" *ngFor="let j of carouselData; let k = index" [ngClass]="k == 0 ? 'carousel-item active' : 'carousel-item'">
         <div class="view">
-          <img class="d-block w-100" src="../../assets/caro1.jpg"
+          <img class="d-block w-100" [src]="carouselData[k].imageUrl"
             alt="First slide">
           <div class="mask rgba-black-light"></div>
         </div>
         <div class="carousel-caption">
-          <h3 class="h3-responsive">Light mask</h3>
-          <p>First text</p>
-        </div>
-      </div>
-      <div class="carousel-item ">
-        <!--Mask color-->
-        <div class="view">
-          <img class="d-block w-100 peopleCarouselImg " src="../../assets/caro2.jpg"
-            alt="Second slide">
-          <div class="mask rgba-black-strong"></div>
-        </div>
-        <div class="carousel-caption">
-          <h3 class="h3-responsive">Strong mask</h3>
-          <p>Secondary text</p>
-        </div>
-      </div>
-      <div class="carousel-item" peopleCarouselImg>
-        <!--Mask color-->
-        <div class="view">
-          <img class="d-block w-100" src="../../assets/caro3.jpg"
-            alt="Third slide">
-          <div class="mask rgba-black-slight"></div>
-        </div>
-        <div class="carousel-caption">
-          <h3 class="h3-responsive">Slight mask</h3>
-          <p>Third text</p>
+          <h3 class="h3-responsive">{{carouselData[k].captionTitle}}</h3>
+          <p>{{carouselData[k].caption}}</p>
         </div>
       </div>
     </div>
@@ -141,3 +115,8 @@
     </div>
 </div>
 <hr>
+
+<!-- <div class="container-fluid">
+  <app-item-listing [data]="itemListingData1"></app-item-listing>
+</div> -->
+

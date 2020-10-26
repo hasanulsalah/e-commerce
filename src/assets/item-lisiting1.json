@@ -1,0 +1,19 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "imageUrl": "hi",
+            "description": "hello"
+        },
+        {
+            "id": 2,
+            "imageUrl": "new",
+            "description": "text"
+        },
+        {
+            "id": 3,
+            "imageUrl": "worl",
+            "description": "wolrd"
+        }
+    ]
+}

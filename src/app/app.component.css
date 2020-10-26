@@ -22,3 +22,10 @@
     padding-left:15px;
     padding-right:15px;
   }
+  #div_top_hypers {
+    display:inline;      
+}
+#ul_top_hypers li{
+    display: inline;
+}
+ 

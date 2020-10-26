@@ -1,1 +1,469 @@
-<p *ngFor="let x of data">{{x.imageUrl}}, {{x.description}} <br> </p>
+<!-- <p *ngFor="let x of data">{{x.imageUrl}}, {{x.description}} <br> </p> -->
+<h5><span><b>Today's Deals</b></span></h5>
+<div class="container-fluid">
+
+    <div class="bg-light clearfix">
+        <span class="styledeal">Deals Of The Day</span>    
+       
+        <button type="button" class="btn btn-primary float-right border border-info mr-4">View All Products</button>
+    </div>
+</div>
+<hr>
+
+<!-- <div class="container-fluid">
+  <app-item-listing [data]="itemListingData1"></app-item-listing>
+</div> -->
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0">
+        <!-- Carousel indicators -->
+        <!-- <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>    -->
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+
+            <div class="row">
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://sm.pcmag.com/pcmag_in/news/a/amazon-amp/amazon-amps-up-fire-hd-8-tablet_p4bt.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Apple iPad</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcScD9ae9B2GpOXYcAmmvtXINhdfv6WBPy_k8w&usqp=CAU" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Sony Headphone</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>		
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="data:image/jpeg;base64,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Vy28ILUMMzQ48CPBIO2efoc/hXlEQXtq2eJq6zvEoGrD4ZG9CDx70PRUkkbmktcC1w1DhQjuCpVmvGSMjPEBpUmrfwuGbewNFcMveKcYZ2h/46NcPwyCg5a4e5QebVrcO0dssD8dlnfDXVoNWP8AxMNWu9QpFpuEOzs78R13UnhfT5To4dRkqaaFzDhe0tcODhQoPpN2+1IEfbQus0vGWwODWPJOroH1ZXm4Znoraxe1GTHT3qJ7eG/hcyndwqvjiIPu1v8AaaxseVosgfTLdtnmNe2Bo+pXze/ttprSfE503Le0bGOohaaH8xK8iitHW02l8rscji53M8Og5BclkCuSmRWMDxSGg5Vp6E8OwqegUEaGFzzRorTMnQNHMk5Ad1OEMUObzjfypl6NOvc0HRy5S26gwxjCBx09QOB6mp6qGTXMoJFptr39By58qnj205AKMiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiAiIgIiICIiDvZ7W+PIHw1rhdm2vOh0PUZq2ivlkjcE7Q4cn1cBl9148bf/pUSILi03VG4Y4ZMI+GQinpI3wnsaFV0ljkbq0+mf6hc45XNNWktPMEhdW2x4NciewB+ooUGG2SU6RvP5StmWNxOeVNeJHfl60XR15yEUo2nUF36OJCjSTOdkTlyGQHYDJBJ3zI8meI8/78ewoO6iySl2ZNeXIdAOC0RAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREH/2Q==" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Macbook Air</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>					
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://uhdwallpapers.org/uploads/cache/3073678378/nikon-dslr-camera_600x338-mm-90.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Nikon DSLR</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="carousel-item">
+
+            <div class="row">
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1518908336710-4e1cf821d3d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Sony Play Station</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSPE3SZU8YtOkEL5vmFaN4_kfwND9mHvTNLMw&usqp=CAU" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Macbook Pro</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://static.roland.com/assets/images/products/main/ktn-head_main.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Bose Speaker</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSRk82HUpaQxpcS7F-FHfK0_ImRwkQl1tNMhQ&usqp=CAU" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Samsung Galaxy S8</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>						
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/examples/images/products/iphone.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Apple iPhone</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/examples/images/products/canon.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Canon DSLR</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/examples/images/products/pixel.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Google Pixel</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>	
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/examples/images/products/watch.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Apple Watch</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control-prev" href="#myCarousel" data-slide="prev">
+          <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" data-slide="next">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+      </div>
+    </div>
+
+</div>
+
+
+<hr class="style-hr">
+
+    <div class="container-fluid">
+
+        <div class="row no-gutters">
+            <div class="col-4">
+                <div class="card">
+                    <img src="https://www.gizbot.com/img/600x40/img/2018/03/8-apps-find-online-offers-discounts-india-1520066749.jpg" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/amazon-pantry-offer-505_071118044704.jpg?size=1200:675" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2020/01/real-me-new-year-sale-1578039133.jpg     " class="card-img-top" alt="...">
+                </div>
+            </div>
+        </div>
+
+        <hr class="style-hr">
+
+    </div>
+
+<div class="container-fluid">
+
+    <div class="bg-light clearfix">
+        <span class="styledeal">Best Battery Phones</span>    
+       
+        <button type="button" class="btn btn-primary float-right border border-info mr-4">View All Products</button>
+    </div>
+</div>
+<hr>
+
+<!-- <div class="container-fluid">
+  <app-item-listing [data]="itemListingData1"></app-item-listing>
+</div> -->
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div id="myCarousel2" class="carousel slide" data-ride="carousel" data-interval="0">
+        <!-- Carousel indicators -->
+        <!-- <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>    -->
+        <!-- Wrapper for carousel items -->
+        <div class="carousel-inner">
+
+          <div class="carousel-item active">
+
+            <div class="row">
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://www.freepngimg.com/thumb/samsung_mobile_phone/5-2-samsung-mobile-phone-png-hd.png" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Samsung Edge</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://n4.sdlcdn.com/imgs/i/6/1/Micromax-Canvas-1-C1A-HD-SDL818068535-1-cbcd1.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Micromax</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>		
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://5.imimg.com/data5/TR/QF/EQ/GLADMIN-16388510/selection-003-500x500-500x500.png" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Galaxy A10</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>					
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSXDOeCBzQTaVlomtQe_WGxdW9V5xqVe0jL1Q&usqp=CAU" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Iphone8</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="carousel-item">
+
+            <div class="row">
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://images.unsplash.com/photo-1518908336710-4e1cf821d3d1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Sony Play Station</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSPE3SZU8YtOkEL5vmFaN4_kfwND9mHvTNLMw&usqp=CAU" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Macbook Pro</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://static.roland.com/assets/images/products/main/ktn-head_main.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Bose Speaker</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSRk82HUpaQxpcS7F-FHfK0_ImRwkQl1tNMhQ&usqp=CAU" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Samsung Galaxy S8</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>						
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/examples/images/products/iphone.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Apple iPhone</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/examples/images/products/canon.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Canon DSLR</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/examples/images/products/pixel.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Google Pixel</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>	
+
+              <div class="col-sm-3">
+                <div class="thumb-wrapper">
+                  <div class="img-box">
+                    <img src="/examples/images/products/watch.jpg" class="img-fluid" alt="">
+                  </div>
+                  <div class="thumb-content">
+                    <h4>Apple Watch</h4>
+                    <a href="#" class="btn btn-primary">Add to Cart</a>
+                  </div>						
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!-- Carousel controls -->
+        <a class="carousel-control-prev" href="#myCarousel2" data-slide="prev">
+          <i class="fa fa-angle-left"></i>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel2" data-slide="next">
+          <i class="fa fa-angle-right"></i>
+        </a>
+      </div>
+      </div>
+    </div>
+
+</div>
+
+
+<hr class="style-hr">
+
+    <div class="container-fluid">
+
+        <div class="row no-gutters">
+            <div class="col-4">
+                <div class="card">
+                    <img src="https://www.goindigo.in/content/dam/indigov2/6e-website/campaigns/indigo-offers/HDFCPZapp-CshBck-Nov19-LndgPgBnnr-420x250.jpg" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img src="https://akm-img-a-in.tosshub.com/sites/btmt/images/stories/amazon-pantry-offer-505_071118044704.jpg?size=1200:675" class="card-img-top" alt="...">
+                </div>
+            </div>
+            <div class="col-4">
+                <div class="card">
+                    <img src="https://resize.indiatvnews.com/en/resize/newbucket/715_-/2020/01/real-me-new-year-sale-1578039133.jpg     " class="card-img-top" alt="...">
+                </div>
+            </div>
+        </div>
+
+        <hr class="style-hr">
+
+    </div>
+
+ 
+
+    
+
+ 

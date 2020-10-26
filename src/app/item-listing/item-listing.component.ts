@@ -7,7 +7,6 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ItemListingComponent implements OnInit {
   @Input() data: any;
-  public cardData: any;
   constructor() { }
 
   ngOnInit() {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import carouselImages from '../../assets/carousel-images.json';
-import itemListing1 from '../../assets/item-lisiting1.json';
+// import itemListing1 from '../../assets/item-lisiting1.json';
 
 @Component({
   selector: 'app-home-page',
@@ -13,10 +13,12 @@ export class HomePageComponent implements OnInit {
   public itemListingData1: any;
   constructor() { }
 
+ 
   
   ngOnInit() {
     this.carouselData = carouselImages.images;
-    this.itemListingData1 = itemListing1.items;
+    // this.itemListingData1 = itemListing1.items;
+    
   }
 
 }

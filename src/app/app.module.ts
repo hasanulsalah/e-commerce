@@ -11,7 +11,7 @@ import { ItemListingComponent } from './item-listing/item-listing.component';
   declarations: [
     AppComponent,
     HomePageComponent,
-    ItemListingComponent
+    ItemListingComponent,
   ],
   imports: [
     BrowserModule,
